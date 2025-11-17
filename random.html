@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤 뽑기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>이름: (여기에 추가)</h1>
+        <p class="subtitle">한 줄 소개: (여기에 추가)</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main class="container">
+        <section>
+            <h2>String + Array + Math 조합: 내맘대로 뽑기</h2>
+
+            <script>
+                let defaultList = "햄버거,쫄면,돈까스,뿌링클,엽떡,얼큰이국밥,주먹밥,광어,대게,랍스터,한우,수박,딸기";
+                let inputString = prompt("항목을 콤마(,)로 구분하여 입력하세요", defaultList);
+                if (!inputString) {
+                    document.write("<h3>뽑기를 취소했습니다.</h3>");
+                } else {
+                    let items = inputString.split(',');
+                    let index = Math.floor(Math.random() * items.length);
+                    document.write("<h3>입력한 항목 (총 " + items.length + "개):</h3>");
+                    document.write("<p>" + inputString + "</p>");
+                    document.write("<hr>");
+                    document.write("<h3> 당신의 선택은...</h3>");
+                    let choice = items[index].trim();
+                    document.write("<h1> " + choice + " 입니다!</h1>");
+                    document.write("<p><i>새로고침(F5)을 눌러 다시 뽑을 수 있습니다.</i></p>");
+                }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
